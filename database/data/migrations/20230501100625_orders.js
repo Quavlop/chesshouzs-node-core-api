@@ -17,6 +17,6 @@ exports.up = async function(knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function(knex) {
-    knex.schema.dropTableIfExists('orders');  
+exports.down = async function(knex) {
+    return knex.schema.dropTableIfExists('orders');  
 };
