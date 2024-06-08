@@ -5,7 +5,7 @@
 
 exports.up = async function(knex) {
     return knex.schema.createTable("users", table => {
-        table.uuid('id').notNullable().unique();
+        table.uuid('id').notNullable().unique().defaultTo(knex.fn.uuid());
         table.string('username').notNullable();
         table.string('email').notNullable().unique();
         table.string('profile_picture').nullable();

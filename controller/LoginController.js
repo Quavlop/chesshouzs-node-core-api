@@ -41,7 +41,7 @@ const handleLogin = async (req, res) => {
                     });                          
                 }
 
-                const jwtPayload = {id : data.id, elo_points : data.elo_points}
+                const jwtPayload = {id : data.id}
 
                 jwt.sign(jwtPayload, process.env.JWT_SECRET, {expiresIn : process.env.JWT_LIFETIME / 24 + 'd'},
                     (err, token) => {
