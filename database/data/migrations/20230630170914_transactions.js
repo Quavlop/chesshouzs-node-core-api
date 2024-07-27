@@ -4,7 +4,7 @@
  */
 exports.up = async function(knex) {
     return knex.schema.createTable("transactions", table => {
-        table.string('id').notNullable().unique();
+        table.string('id').primary().notNullable().unique();
         table.string('order_id').notNullable();
         table.timestamp('date').defaultTo(knex.fn.now());    
         table.string('status').nullable();        

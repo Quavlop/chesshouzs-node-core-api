@@ -5,7 +5,7 @@
 
 exports.up = async function(knex) {
     return knex.schema.createTable("game_type_variant", table => {
-        table.uuid('id').notNullable().unique().defaultTo(knex.fn.uuid());
+        table.uuid('id').primary().notNullable().unique().defaultTo(knex.fn.uuid());
         table.uuid('game_type_id').notNullable();
         table.integer('duration').notNullable();
         table.integer('increment').notNullable().defaultTo(0);

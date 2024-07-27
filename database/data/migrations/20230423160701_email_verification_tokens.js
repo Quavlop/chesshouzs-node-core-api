@@ -4,7 +4,7 @@
  */
 exports.up = async function(knex) {
     return knex.schema.createTable('email_verification_tokens', table => {
-        table.string('token').notNullable();
+        table.string('token').primary().notNullable();
         table.timestamp('expires_at');             
         table.uuid('user_id');   
 

@@ -9,6 +9,7 @@ exports.up = async function(knex) {
         table.uuid('white_player_id').notNullable();
         table.uuid('black_player_id').notNullable();
         table.uuid('game_type_variant_id').notNullable();
+        table.uuid('room_id').nullable();
         table.string('moves_cache_ref').nullable(); // redis hash
         table.string('moves').nullable();
         table.boolean('is_done').defaultTo(false);
