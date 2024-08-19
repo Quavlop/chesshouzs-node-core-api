@@ -29,6 +29,7 @@ exports.seed = async function(knex) {
           auto_trigger: false,
           duration: 4,
           usage_count: 2,
+          row_limit : 3, 
           created_at: knex.fn.now(),
           updated_at: knex.fn.now()
       },
