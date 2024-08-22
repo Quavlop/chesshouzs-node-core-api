@@ -16,6 +16,8 @@ exports.up = async function(knex) {
         table.integer('usage_count').notNullable();
         table.integer('row_limit').nullable();
         table.integer('col_limit').nullable();
+        table.string('type').nullable(); // buff / debuff
+        table.boolean('permanent').nullable().defaultTo(true);
         table.timestamp('created_at').defaultTo(knex.fn.now());
         table.timestamp('updated_at').defaultTo(knex.fn.now());
     });

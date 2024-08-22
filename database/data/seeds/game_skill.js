@@ -15,8 +15,10 @@ exports.seed = async function(knex) {
           auto_trigger: false,
           duration: 0, // unlimited
           usage_count: 4,
+          type : "buff", 
+          permanent : true,
           created_at: knex.fn.now(),
-          updated_at: knex.fn.now()
+          updated_at: knex.fn.now(), 
       },
       {
           id: uuid(),
@@ -30,6 +32,8 @@ exports.seed = async function(knex) {
           duration: 4,
           usage_count: 2,
           row_limit : 3, 
+          type : "buff", 
+          permanent : true,
           created_at: knex.fn.now(),
           updated_at: knex.fn.now()
       },
@@ -44,6 +48,8 @@ exports.seed = async function(knex) {
           auto_trigger: true,
           duration: 3,
           usage_count: 1,
+          type : "debuff", 
+          permanent : false,
           created_at: knex.fn.now(),
           updated_at: knex.fn.now()
       }, 
@@ -58,6 +64,8 @@ exports.seed = async function(knex) {
         auto_trigger: false,
         duration: 1,
         usage_count: 3,
+        type : "debuff", 
+        permanent : false,
         created_at: knex.fn.now(),
         updated_at: knex.fn.now()
       },
@@ -72,6 +80,8 @@ exports.seed = async function(knex) {
         auto_trigger: true,
         duration: 2,
         usage_count: 1,
+        type : "debuff", 
+        permanent : false,
         created_at: knex.fn.now(),
         updated_at: knex.fn.now()
       },
