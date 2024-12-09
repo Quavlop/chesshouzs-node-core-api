@@ -30,7 +30,7 @@ const handleLogin = async (req, res) => {
                     });                    
                 }
 
-                data.password = '';
+                // data.password = '';
 
                 if (!await bcrypt.compare(password, data.password)){
                     return res.status(401).json({
