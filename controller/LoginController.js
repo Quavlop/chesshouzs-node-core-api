@@ -56,7 +56,7 @@ const handleLogin = async (req, res) => {
 
                         res.cookie('__SESS_TOKEN', token, {
                             httpOnly : true,
-                            sameSite : 'None',
+                            sameSite : process.env.ENVIRONMENT === "production" ? "None" : "Lax",
                             maxAge : 3600000 * process.env.JWT_LIFETIME,
                             secure : process.env.ENVIRONMENT === "production",
                         });

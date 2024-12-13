@@ -30,7 +30,7 @@ const handleLogOut = (req, res) => {
 
                 res.cookie('__SESS_TOKEN', token, {
                     httpOnly : true,
-                    sameSite : 'None',
+                    sameSite : process.env.ENVIRONMENT === "production" ? "None" : "Lax",
                     maxAge : 1,
                     secure : process.env.ENVIRONMENT === "production",
                 });                
