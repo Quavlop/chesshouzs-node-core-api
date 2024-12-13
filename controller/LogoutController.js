@@ -32,7 +32,7 @@ const handleLogOut = (req, res) => {
                     httpOnly : true,
                     sameSite : 'None',
                     maxAge : 1,
-                    secure : true,
+                    secure : process.env.ENVIRONMENT === "production",
                 });                
 
                 return res.status(200).json({

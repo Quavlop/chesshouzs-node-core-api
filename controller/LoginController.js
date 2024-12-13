@@ -58,7 +58,7 @@ const handleLogin = async (req, res) => {
                             httpOnly : true,
                             sameSite : 'None',
                             maxAge : 3600000 * process.env.JWT_LIFETIME,
-                            secure : true,
+                            secure : process.env.ENVIRONMENT === "production",
                         });
 
                         let filteredData = data;

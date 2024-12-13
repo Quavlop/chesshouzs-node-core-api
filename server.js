@@ -26,7 +26,7 @@ const csrfMiddleware = csrf({
     cookie : {
         key : '_csrf',
         httpOnly : 'true',
-        secure : true,
+        secure : process.env.ENVIRONMENT === "production",
         maxAge : 3600 * process.env.XSRF_TOKEN_LIFETIME
     }
 });
